@@ -1,18 +1,21 @@
-<div id="test-sortableTrash" class="sortable-code"></div> 
-<div id="test-sortable" class="sortable-code"></div> 
+<div id="es1-sortableTrash" class="sortable-code"></div> 
+<div id="es1-sortable" class="sortable-code"></div> 
 <div style="clear:both;"></div> 
 <p> 
-    <input id="test-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="test-newInstanceLink" value="Reset Problem" type="button" /> 
+    <input id="es1-feedbackLink" value="Get Feedback" type="button" /> 
+    <input id="es1-newInstanceLink" value="Reset Problem" type="button" /> 
 </p> 
 <script type="text/javascript"> 
 (function(){
-  var initial = "print(&quot;Hello World&quot;)\n" +
-    "print Hello\n" +
-    "#distractor\n" +
-    "Prinmt(Hello)#distractor";
+  var initial = "if(true)
+\n" +
+    "    print(&quot;Qui sono nell&#039;if&quot;)
+\n" +
+    "    print(&quot;anche qui sono nell&#039;if&quot;)
+\n" +
+    "print(&quot;qui sono fuori dall&#039;if&quot;)";
   var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "test-sortable",
+    "sortableId": "es1-sortable",
     "max_wrong_lines": 10,
     "grader": ParsonsWidget._graders.LineBasedGrader,
     "exec_limit": 2500,
@@ -20,56 +23,17 @@
     "x_indent": 50,
     "lang": "en",
     "show_feedback": true,
-    "python3": true,
-    "trashId": "test-sortableTrash"
+    "python3": true
   });
   parsonsPuzzle.init(initial);
   parsonsPuzzle.shuffleLines();
-  $("#test-newInstanceLink").click(function(event){ 
+  $("#es1-newInstanceLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.shuffleLines(); 
   }); 
-  $("#test-feedbackLink").click(function(event){ 
+  $("#es1-feedbackLink").click(function(event){ 
       event.preventDefault(); 
       parsonsPuzzle.getFeedback(); 
   }); 
 })(); 
 </script>
-<div id="test-sortableTrash" class="sortable-code"></div> 
-<div id="test-sortable" class="sortable-code"></div> 
-<div style="clear:both;"></div> 
-<p> 
-    <input id="test-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="test-newInstanceLink" value="Reset Problem" type="button" /> 
-</p> 
-
-<script type="text/javascript"> 
-(function(){
-  var initial = "print(&quot;Ciao&quot;)\n" +
-    "print(&quot;Come ti chiami?)\n" +
-    "print(&quot;ho fame&quot;)#distractor";
-  var parsonsPuzzle = new ParsonsWidget({
-    "sortableId": "test-sortable",
-    "max_wrong_lines": 10,
-    "grader": ParsonsWidget._graders.LineBasedGrader,
-    "exec_limit": 2500,
-    "can_indent": true,
-    "x_indent": 50,
-    "lang": "en",
-    "show_feedback": true,
-    "python3": true,
-    "trashId": "test-sortableTrash"
-  });
-  parsonsPuzzle.init(initial);
-  parsonsPuzzle.shuffleLines();
-  $("#test-newInstanceLink").click(function(event){ 
-      event.preventDefault(); 
-      parsonsPuzzle.shuffleLines(); 
-  }); 
-  $("#test-feedbackLink").click(function(event){ 
-      event.preventDefault(); 
-      parsonsPuzzle.getFeedback(); 
-  }); 
-})(); 
-</script>
-
