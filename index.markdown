@@ -36,13 +36,8 @@
       parsonsPuzzle.getFeedback(); 
   }); 
 })(); 
-<div id="es1-sortableTrash" class="sortable-code"></div> 
-<div id="es1-sortable" class="sortable-code"></div> 
-<div style="clear:both;"></div> 
-<p> 
-    <input id="es1-feedbackLink" value="Get Feedback" type="button" /> 
-    <input id="es1-newInstanceLink" value="Reset Problem" type="button" /> 
-</p> 
+    </script>
+
 <script type="text/javascript"> 
 (function(){
   var initial = "while(true)
@@ -74,5 +69,4 @@
       parsonsPuzzle.getFeedback(); 
   }); 
 })(); 
-</script>
 </script>
